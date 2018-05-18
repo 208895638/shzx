@@ -6,8 +6,13 @@ layui.define("layer",function(exports){ //提示：模块也可以依赖其它�
             alert('Hello '+ (str||'mymod'));
         }
     };
-
+    $(document).on('ajaxStart',function(){ //使用bind
+        loading = layer.load(3, {time: 10*1000})
+     }).on('ajaxStop',function(){ //直接使用ajaxComplete
+        layer.close(loading); 
+     });
     var url = "../api/mapi.aspx";
+    var imgUrl = "../../Handler1.ashx";
     var data;
     var reg = {
         userReg:function(val){
@@ -22,22 +27,31 @@ layui.define("layer",function(exports){ //提示：模块也可以依赖其它�
                 return  true;
             }
         }
-    }
+    };
+    $(".yzm input").blur(function(){
+        if($(".yzm input").val() === "" || $(".yzm input").val() ==null){
+            layer.msg("验证码长度不能为空!");
+        };
+    });
     $(".loginData").on("click",function(e){
         e.preventDefault();           
         data={
             m:"login",
             loginname:$("#username").val(),
-            password:$("#password").val()
+            password:$("#password").val(),
+            ckcode:$("#yzmcode").val()
         }
+        console.log(data);
         if(!reg.userReg($("#username").val())){
             layer.msg('用户名只能输入手机号码！'); 
         }else if(!reg.passReg($("#password").val())){
-            layer.msg('密码长度不能小于6'); 
+            layer.msg('密码长度不能小于6!'); 
+        }else if($(".yzm input").val() === "" || $(".yzm input").val() ==null){
+            layer.msg("验证码长度不正确!");
         }else{
-            
             $.post(url,data,function(result){
                 var code = result.Code;
+                console.log(result)
                 if (code == 1) {
                     self.location="index.html"
                     layer.msg(result.Msg);
@@ -48,15 +62,8 @@ layui.define("layer",function(exports){ //提示：模块也可以依赖其它�
         }
         
     });
-
-    // function login(){
-        
-    //     console.log(data)
-    //     $.post(url,data,function(result){
-    //         console.log(result)
-    //         layer.msg(result); 
-    //     });
-    // }
-    //输出test接口
+    $(".yzm img").on("click",function(){
+        $(this).attr({src:"../Handler1.ashx?"+Math.random()});
+    });
     exports('mymod', obj);
 });   

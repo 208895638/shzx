@@ -125,6 +125,19 @@ layui.define(['layer', 'form', "element", "jquery"], function (exports) {
                 $(this).removeClass("border_color_red");
             }
         });
+        $('.yzm input').blur(function () {  
+            console.log(111)
+            if($("#yzmcode").val() == "" ){
+                layer.msg("验证码长度不能为空!");
+                $(this).addClass("border_color_red").parent().parent().siblings().find(".layui-input").removeClass("border_color_red");
+            };
+            // if (!validate.testZFBAccount($.trim($("#ZFBAccount").val()))) {
+            //     layer.msg("支付宝账户格式不正确,格式为手机号或邮箱");
+            //     $(this).addClass("border_color_red").parent().parent().siblings().find(".layui-input").removeClass("border_color_red");
+            // }else{
+            //     $(this).removeClass("border_color_red");
+            // }
+        });
     $("#postMessage").on("click", function (e) {
         e.preventDefault();
         data = {
@@ -137,7 +150,8 @@ layui.define(['layer', 'form', "element", "jquery"], function (exports) {
             qq: $.trim($("#QQ").val()),
             paid: $.trim($("#SuperiorID").val()),
             aliaccount: $.trim($("#ZFBAccount").val()),
-            aliname: $.trim($("#ZFBName").val())
+            aliname: $.trim($("#ZFBName").val()),
+            ckcode: $.trim($("#yzmcode").val())
         };
         
         // var len = $(".reg_info").find(".layui-input");
