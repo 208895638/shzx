@@ -1,0 +1,109 @@
+html{
+    background-color: #f2f2f2;
+}
+.text_center{
+    text-align: center; 
+}
+.user_box{
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 70px 0;
+    background: #07a1f9;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 768px){
+    body{
+        font-size: 16px;
+    }
+    .padding_76{
+        padding: 26px 0!important;
+    }
+    // .user_box {
+    //     padding-top: 60px;
+    // }
+}
+@media screen and (min-width: 992px){
+    body{
+        font-size: 16px;
+    }
+}
+
+.font_lg{
+    font-size: 30px;
+}
+.font_small{
+    font-size: 14px;
+}
+.font_noraml{
+    font-size: 18px;
+}
+.bg_fff{
+    background-color: #fff!important;
+}
+.height_middle{
+    bottom: 0;
+    margin: auto;
+}
+.margin_11{
+    margin-top: 11px;
+}
+.wz{
+    padding-top: 34px;
+    dt{
+        font: 36px/80px "微软雅黑";
+        color: #fff;
+        text-indent: 60px;
+        background: url(../images/wz.png) no-repeat left center;
+        background-size: 43px 39px;
+    }
+    dd{
+        font: 14px/36px "微软雅黑";
+        color: #fff;
+        text-indent: 100px;
+        background: url(../images/true.png) no-repeat 62px center;
+        background-size: 23px 17px;
+    }
+}
+.reg_info{
+    // p{
+    //     text-align: center;
+    //     label{
+    //         width: 240px;
+    //         text-align: right;
+    //         font: 12px/47px "微软雅黑";
+    //         color: #737373;
+    //         margin-right: 16px;
+    //     }
+    // }
+}
+.padding_40{
+    padding: 40px 0;
+    label{
+        padding: 9px 0;
+        width: 98px;
+    }
+}
+.reg_info{
+    padding: 0 20px;
+    label{
+        width: 90px;
+    }
+    .layui-input-block{
+        margin-left: 100px;
+    }
+}
+.text_red{
+    color: red;
+    margin: 0 2px;
+}
+.border_color_red{
+    border-color: red;
+}
+.layui-btn-disabled, .layui-btn-disabled:active, .layui-btn-disabled:hover{
+    border: 1px solid #e6e6e6;
+    background-color: #eee;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 1;
+}
