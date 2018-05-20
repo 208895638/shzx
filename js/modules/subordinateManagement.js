@@ -6,8 +6,14 @@ layui.define(['layer', 'form', "element", "jquery","table"], function (exports) 
     table = layui.table,
     $ = layui.$;
     // loading
-    var loading ;
-    $(document).on('ajaxStart',function(){ //使用bind
+    var loading,RegRules={
+
+        number:function(val){
+            var test =/^\d+(\.\d+)?$/;
+            return test.test(val);
+        }                          
+    } ;
+    $(document).on('ajaxStart',function(){ //使用bind 
         loading = layer.load(3, {time: 10*1000})
      }).on('ajaxStop',function(){ //直接使用ajaxComplete
         layer.close(loading); 
@@ -51,23 +57,15 @@ layui.define(['layer', 'form', "element", "jquery","table"], function (exports) 
             var data = obj.data;
             console.log(data.rate)
             if(obj.event == 'edit'){
-                layer.prompt({title: '修改费率', formType: 0}, function(text, index){
-                    var percent = text.split("");
-                    if(percent[percent.length-1] != "%"){
-                        layer.msg('请输入正确格式的百分比,最后一个必须为%');
+                layer.prompt({title: '修改费率（请输入0以上的数字，如20.01）', formType: 0}, function(text, index){
+                    console.log(RegRules.number(text));
+                    if(!RegRules.number(text)){
+                        layer.msg("请输入0以上的数字不可包含特殊字符!");
+                        
+                    }else{
+                        data.rate = text;
+                        layer.close(index);
                     }
-                    var count = 0;
-                    for( var i in percent)
-                    {
-                        if(percent[i] == "%")
-                        {
-                            count++;
-                        }
-                    }
-                    if(count!=1){
-                        layer.msg('输入的%过多');
-                    }
-                    // layer.close(index);
                 });
             }
         });
@@ -88,22 +86,6 @@ layui.define(['layer', 'form', "element", "jquery","table"], function (exports) 
         layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
       });
     var url = "../api/mapi.aspx";
-    // table.render({
-    //     elem: '#demo'
-    //     ,height: 315
-    //     ,url: './data.json' //数据接口
-    //     ,page: true //开启分页
-    //     ,cols: [[ //表头
-    //         {field: 'id', title: '商户ID', width:80, sort: true, fixed: 'left'}
-    //         ,{field: 'username', title: '姓名', width:80}
-    //         ,{field: 'sex', title: 'QQ', width:80, sort: true}
-    //         ,{field: 'city', title: '费率', width:80} 
-    //         ,{field: 'sign', title: '支付宝权限', width: 177}
-    //         ,{field: 'experience', title: '微信权限', width: 80, sort: true}
-    //         ,{field: 'score', title: '一码通权限', width: 80, sort: true}
-    //         ,{field: 'classify', title: '状态', width: 80}
-    //     ]]
-    //   });
     
     
        

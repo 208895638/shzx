@@ -1,6 +1,9 @@
 @charset "UTF-8";
-html {
+html, body {
   background-color: #f2f2f2; }
+
+.text_orange {
+  color: #FFB800 !important; }
 
 .text_center {
   text-align: center; }
@@ -170,5 +173,15 @@ body .layui-layout-admin .site-demo {
 .subordinateManagement_input {
   width: auto; }
 
-.margin_10 {
-  margin: 0 10px; }
+iframe {
+  width: 100%; }
+
+.top0 {
+  top: 0 !important; }
+
+.top72 {
+  top: 72px !important; }
+
+span, em, i {
+  font-weight: normal;
+  font-style: normal; }
