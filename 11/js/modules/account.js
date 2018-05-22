@@ -71,7 +71,14 @@ layui.define(['layer', 'form', "jquery","table"], function (exports) {
                 url:text
             }
             $.post(url1 , data1 ,function(msg){
-                layer.msg(msg.Msg);
+                console.log(msg)
+                if(msg.Code == "1"){
+                    layer.close(index);
+                    layer.msg(msg.Msg);
+                    parent.location.reload();
+                }else{
+                    layer.msg(msg.Msg);
+                }
             })
         });
     });
