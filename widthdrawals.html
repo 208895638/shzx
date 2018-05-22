@@ -11,50 +11,73 @@
     <title>提现</title>
 </head>
 <body class="bg_fff ">
-    <div class="layui-row padding_top20">
-        <div class="">
-            <ul class="layui-card">
-                <li class="layui-card-header clearfix">
-                    <span class="l">提现入账</span>
-                    <em class="r">
-                        （支付宝） 王佩佩 pei*****com
-                    </em>
-                </li>
-                <li class="layui-card-header clearfix">
-                    <span class="l">可用金额</span>
-                    <em class="r">
-                        <i class="text_orange">1321</i>元
-                    </em>
-                </li>
-                <li class="layui-card-header clearfix">
-                    <span class="l">提现类型</span>
-                    <em class="r">
-                        <button class="layui-btn layui-btn-primary">人工提现</button>
-                    </em>
-                </li>
-                <li class="layui-card-header clearfix">
-                    <span class="l">提现金额</span>
-                    <em class="r">
-                        <input type="text" name="money"  placeholder="请输入提现的金额" autocomplete="off" class="layui-input" style="margin: 2px 0;">
-                    </em>
-                </li>
-                <li class="layui-card-header clearfix">
-                    <span class="l">提现手续费</span>
-                    <em class="r">
-                        <i class="text_orange">1321</i>元
-                    </em>
-                </li>
-                <li class="layui-card-header clearfix">
-                    <span class="l">实扣金额</span>
-                    <em class="r">
-                        <i class="text_green">1321</i>元
-                    </em>
-                </li>
-            </ul>
-            <div class="layui-col-md8 layui-col-md-offset2 layui-col-xs10 layui-col-xs-offset1">
-                <button class="layui-btn layui-btn-fluid ">提现</button>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-tab layui-tab-brief subordinateManagement" lay-filter="demoTitle">
+            <div class="site-demo-title layui-tab-title top0" lay-filter="demoTitle" style="border-bottom: none;background: #fff;padding: 16px 0;">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend><a href="widthdrawals.html">资金管理</a>-发起提现</legend>
+                </fieldset>
             </div>
-            
+            <div class="layui-body layui-tab-content site-demo site-demo-body bg_fff layui-form top72" >
+                <div class="layui-tab-item layui-show">
+                    <div class="row clearfix">
+                        <div class="layui-col-md10 layui-col-md-offset1">
+                            <!-- <div class="layui-row">
+                                <input type="text" name="identity" lay-verify="identity" placeholder="请输入姓名查询" autocomplete="off" class="layui-input l subordinateManagement_input">
+                                <button class="layui-btn l margin_10"><i class="layui-icon">&#xe615;</i>查询</button>
+                            </div> -->
+                            <div class="widthdrawls">
+                                <div class="layui-row padding_top20">
+                                        <div class="">
+                                            <ul class="layui-card">
+                                                <li class="layui-card-header clearfix">
+                                                    <span class="l">提现入账</span>
+                                                    <em class="r">
+                                                        （支付宝） 王佩佩 pei*****com
+                                                    </em>
+                                                </li>
+                                                <li class="layui-card-header clearfix">
+                                                    <span class="l">可用金额</span>
+                                                    <em class="r">
+                                                        <i class="text_orange">1321</i>元
+                                                    </em>
+                                                </li>
+                                                <li class="layui-card-header clearfix">
+                                                    <span class="l">提现类型</span>
+                                                    <em class="r">
+                                                        <button class="layui-btn layui-btn-primary">人工提现</button>
+                                                    </em>
+                                                </li>
+                                                <li class="layui-card-header clearfix">
+                                                    <span class="l">提现金额</span>
+                                                    <em class="r">
+                                                        <input type="text" name="money"  placeholder="请输入提现的金额" autocomplete="off" class="layui-input" style="margin: 2px 0;">
+                                                    </em>
+                                                </li>
+                                                <li class="layui-card-header clearfix">
+                                                    <span class="l">提现手续费</span>
+                                                    <em class="r">
+                                                        <i class="text_orange">1321</i>元
+                                                    </em>
+                                                </li>
+                                                <li class="layui-card-header clearfix">
+                                                    <span class="l">实扣金额</span>
+                                                    <em class="r">
+                                                        <i class="text_green">1321</i>元
+                                                    </em>
+                                                </li>
+                                            </ul>
+                                            <div class="layui-col-md8 layui-col-md-offset2 layui-col-xs10 layui-col-xs-offset1">
+                                                <button class="layui-btn layui-btn-fluid ">提现</button>
+                                            </div>
+                                            
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./layui/css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>首页</title>
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-tab layui-tab-brief" lay-filter="demoTitle">
+            <div class="site-demo-title layui-tab-title top0" lay-filter="demoTitle" style="border-bottom: none; background: #fff;padding: 16px 0;">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>
+                        <a href="index1.html">账户管理</a>-我的账户</legend>
+                </fieldset>
+            </div>
+            <div class="layui-body layui-tab-content site-demo site-demo-body bg_fff layui-form top72">
+                <div class="layui-tab-item layui-show">
+                    <div class="row clearfix">
+                        <div class="layui-col-md10 layui-col-md-offset1">
+                            <!-- <div class="account_settings">
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            登录名
+                                        </span>
+                                        <em class="r">
+                                            ada ada
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            密码
+                                        </span>
+                                        <em class="r">
+                                            <button class="layui-btn layui-btn-normal layui-btn-sm">修改密码</button>
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            姓名
+                                        </span>
+                                        <em class="r">
+                                            哈哈
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            身份证号码
+                                        </span>
+                                        <em class="r">
+                                            411****1111
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            联系地址
+                                        </span>
+                                        <em class="r">
+                                            企鹅完全额
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            QQ
+                                        </span>
+                                        <em class="r">
+                                            171****111
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            状态
+                                        </span>
+                                        <em class="r">
+                                            <div class="layui-input-block">
+                                                <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="可用|禁用">
+                                            </div>
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            接口费率
+                                        </span>
+                                        <em class="r">
+                                            132131112
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            上级商户ID
+                                        </span>
+                                        <em class="r">
+                                            132131112
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            支付宝姓名
+                                        </span>
+                                        <em class="r">
+                                            132131112
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            支付宝账号
+                                        </span>
+                                        <em class="r">
+                                            132131112
+                                        </em>
+                                    </div>
+                                </div>
+                                <div class="layui-card">
+                                    <div class="layui-card-header clearfix">
+                                        <span class="l">
+                                            账户资金余额
+                                        </span>
+                                        <em class="r">
+                                            132131112
+                                        </em>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="account_settings">
+                                <div class="layui-card LoginName">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">登录名</span>
+                                            <em class="r">11111111</em>
+                                        </div>
+                                        <div class="layui-card-header clearfix layui-col-md4">
+                                            <a href="javascript:;" class="r updatePassword" style="color: blue">修改密码</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-card KYBalance">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">可用余额</span>
+                                            <div class="r">
+                                                <em class="">0.25</em>
+                                                <i  class="">元(保证金: </i>
+                                                <b  class="">0.00</b>)
+                                                
+                                            </div>
+                                           
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="layui-card MerchantName">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">商户名称</span>
+                                            <em class="r">王佩佩</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-card SFZNO">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">身份证号码</span>
+                                            <em class="r">320321198405012034</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-card Address">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">联系地址</span>
+                                            <em class="r">上海市</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-card QQ">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">QQ号</span>
+                                            <em class="r">85473449</em>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="layui-card ParentID">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">上级商户ID</span>
+                                            <em class="r">0</em>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="layui-card AliName">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">支付宝姓名</span>
+                                            <em class="r">王佩佩</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-card AliAccount">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">支付宝账户</span>
+                                            <em class="r">18116453115</em>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="layui-card state">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">状态</span>
+                                            <em class="r cu state1" style="color:green;display: none;">开通</em>
+                                            <em class="r cu state2" style="color:red;display: none;" >禁止</em>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="layui-card APIKey">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">接口Key</span>
+                                            <em class="r">b5183391-cdca-4659-913c-283f42942357</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-card NotifyURL">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">接口回调地址</span>
+                                            <em class="r">&nbsp;</em>
+                                        </div>
+                                        <div class="layui-card-header clearfix layui-col-md4">
+                                                <a href="javascript:;" class="r updateUrl" style="color: blue">修改</a>
+                                            </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="layui-card Rax">
+                                    <div class="layui-card-header clearfix">
+                                        <div class="layui-col-md8">
+                                            <span class="l">支付费率</span>
+                                            <div class="r">
+                                                <em class="r">2.00%
+                                                <i>(最低手续费: </i>
+                                                <b>0.40</b>元)</em>
+                                            </div>
+                                            
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="./layui/layui.js"></script>
+<script>
+    layui.config({
+        base: './js/modules/'
+    }).use('account'); //加载入口
+</script>
+
+</html>

@@ -21,22 +21,14 @@ layui.define(['layer', 'form', "jquery","table","element"], function (exports) {
         $("#iframeBox").attr({"src":urls});
     });
     exports('index', function () {
-
+        return ;
     });
-    
-    function preserveUrl(){
-        var urls = window.location.href;
-        var arr = $.cookie("arr",[]);
-        console.log(arr)
-        arr.push(urls);
-        
-        $.cookie('url', arr);
-        console.log($.cookie(url));
-    };
     function getUrl(){
-        console.log(window.location.hash)
         var urls = window.location.hash.split("#")[1];
-        
-        $("#iframeBox").attr({"src":urls});
+        if(urls){
+            $("#iframeBox").attr({"src":urls});
+        }else{
+            $("#iframeBox").attr({"src":"account.html"});
+        }
     }
 });   

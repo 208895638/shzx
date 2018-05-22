@@ -11,18 +11,37 @@
     <title>提现列表</title>
 </head>
 <body class="bg_fff" style="overflow-y: scroll;">
-    <div class="layui-row">
-        <div class="">
-            <table class="layui-hide" id="test" lay-filter="test"></table>
-            <script type="text/html" id="state">
-                {{#  if(d.state == "提现退回"){ }}
-                  <span style="color: #009688;" lay-event="tip1">{{ d.state }}<i class="layui-icon layui-icon-about"  style="margin:0px 4px;margin-top:2px;"></i></span>
-                {{#  } else { }}
-                <span style="color: #FF5722;">{{ d.state }}</span>
-                {{#  } }}
-              </script>
+    <div class="layui-layout layui-layout-admin">
+            <div class="layui-tab layui-tab-brief subordinateManagement" lay-filter="demoTitle">
+                <div class="site-demo-title layui-tab-title top0" lay-filter="demoTitle" style="border-bottom: none;background: #fff;padding: 16px 0;">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend><a href="widthdrawalsList.html">资金管理</a>-提现列表</legend>
+                    </fieldset>
+                </div>
+                <div class="layui-body layui-tab-content site-demo site-demo-body bg_fff layui-form top72" >
+                    <div class="layui-tab-item layui-show">
+                        <div class="row clearfix">
+                            <div class="layui-col-md10 layui-col-md-offset1">
+                                <div class="widthdrawlsList">
+                                    <div class="layui-row">
+                                        <div class="">
+                                            <table class="layui-hide" id="test" lay-filter="test"></table>
+                                            <script type="text/html" id="state">
+                                                {{#  if(d.state == "提现退回"){ }}
+                                                    <span style="color: #009688;" lay-event="tip1">{{ d.state }}<i class="layui-icon layui-icon-about"  style="margin:0px 4px;margin-top:2px;"></i></span>
+                                                {{#  } else { }}
+                                                <span style="color: #FF5722;">{{ d.state }}</span>
+                                                {{#  } }}
+                                                </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 </body>
 <script src="./layui/layui.js" ></script>  
   <script>
