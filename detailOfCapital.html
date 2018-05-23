@@ -23,21 +23,50 @@
                 <div class="layui-tab-item layui-show">
                     <div class="row clearfix">
                         <div class="layui-col-md10 layui-col-md-offset1">
-                            <!-- <div class="layui-row">
-                                <input type="text" name="identity" lay-verify="identity" placeholder="请输入姓名查询" autocomplete="off" class="layui-input l subordinateManagement_input">
-                                <button class="layui-btn l margin_10"><i class="layui-icon">&#xe615;</i>查询</button>
-                            </div> -->
+                                <!-- <div class="layui-card-header clearfix">
+                                        
+                                    </div> -->
+                            <div class="layui-row layui-card-header layui-form clearfix" style="padding-bottom: 20px;height: auto;">
+                                <div class="search-time layui-inline">
+                                    <div class="layui-inline clearfix layui-hide-xs"> 
+                                        <label class="layui-form-label l">查询时间</label>
+                                        <input type="text" class="layui-input l" style="width: 280px;" id="dataTime">
+                                    </div>
+                                    <div class="layui-hide-md layui-hide-lg ">
+                                        <div class="layui-inline clearfix ">
+                                            <label class="layui-form-label l">开始时间</label>
+                                            <input type="text" class="layui-input l cxsj" style="width: auto;" id="dataTimeBegin">
+                                        </div>
+                                        <div class="layui-inline clearfix">
+                                            <label class="layui-form-label l">结束时间</label>
+                                            <input type="text" class="layui-input l cxsj" style="width: auto;" id="dataTimeEnd">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="layui-inline "> 
+                                    <label class="layui-form-label">查询类型</label>
+                                    <div class="layui-input-block" style="width: 165px">
+                                        <select name="city" class="searchType" lay-filter="searchType">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <button class="layui-btn l margin_10 searchBtn"><i class="layui-icon">&#xe615;</i>查询</button>
+                                </div>
+                            </div>
                             <div class="detailOfCapital">
-                                <table class="layui-table" lay-data="{ url:'./data1.json', page:true, id:'test', skin: 'row', even: true}">
-                                    <thead>
+                                <table class="layui-table" id="test" >
+                                    <!-- <thead>
                                       <tr>
-                                        <th lay-data="{field:'typeOfChange',  sort: true}">变动类型</th>
-                                        <th lay-data="{field:'changeOfMoney', templet: '#changeOfMoney'}">变动资金</th>
-                                        <th lay-data="{field:'old', sort: true, }">变化前</th>
-                                        <th lay-data="{field:'new',}">变化后</th>
-                                        <th lay-data="{field:'changeOfTime'}">变动时间</th>
+                                          <th lay-data="{field:'typeOfChange',  sort: true}">订单号</th>
+                                        <th lay-data="{field:'typeOfChange',  sort: true}">时间</th>
+                                        <th lay-data="{field:'changeOfMoney', templet: '#changeOfMoney'}">变动类型</th>
+                                        <th lay-data="{field:'old', sort: true, }">交易金额</th>
+                                        <th lay-data="{field:'new',}">交易前</th>
+                                        <th lay-data="{field:'changeOfTime'}">交易后</th>
                                       </tr>
-                                    </thead>
+                                    </thead> -->
                                   </table>
                                   <script type="text/html" id="changeOfMoney">
                                     {{#  if(d.changeOfMoney.indexOf("-") == 0){ }}
@@ -46,6 +75,9 @@
                                     <span style="color: #FF5722;">{{ d.changeOfMoney }}</span>
                                     {{#  } }}
                                   </script>
+                            </div>
+                            <div id="detailOfCapital">
+
                             </div>
                         </div>
                     </div>

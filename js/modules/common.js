@@ -5,7 +5,7 @@ layui.define(['layer', 'form', "jquery","table","element"], function (exports) {
     table = layui.table,
     element = layui.element,
     $ = layui.$;
-    getUrl()
+    getUrl();
     // 获取屏幕的宽度给iframe赋值
     var clientH = $(window).height();
     var headH = $("#commonHead").height();
@@ -23,12 +23,20 @@ layui.define(['layer', 'form', "jquery","table","element"], function (exports) {
     exports('index', function () {
         return ;
     });
+    // 获取地址栏hashUrl 以及给左边菜单栏赋值
     function getUrl(){
+        var a= window.location.hash.split("#")[1];
         var urls = window.location.hash.split("#")[1];
+        var hrefUrl = $(".leftNav dd a");
+        $.each(hrefUrl,function(item , index){
+            if($(this).attr("href").split("#")[1] == a ){
+                $(this).addClass("layui-this").siblings().removeClass(".layui-this");
+            }
+        });
         if(urls){
             $("#iframeBox").attr({"src":urls});
         }else{
-            $("#iframeBox").attr({"src":"index1.html"});
+            $("#iframeBox").attr({"src":"account.html"});
         }
     }
 });   
