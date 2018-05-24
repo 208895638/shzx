@@ -29,6 +29,7 @@ html,body{
     .padding_76{
         padding: 26px 0!important;
     }
+    
     // .user_box {
     //     padding-top: 60px;
     // }
@@ -221,4 +222,123 @@ iframe{
 span,em,i{
     font-weight: normal;
     font-style: normal;
+}
+.recharge{
+    .rechargeType{
+        li{
+            border: 1px solid #ccc;
+            padding-left: 26px;
+            margin: 20px 0;
+            border-radius: 4px;
+            height: 52px;
+            position: relative;
+            .rechargeBox{
+                margin-top: 6px;
+            }
+            a{
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 28px;
+                margin: 6px 10px 0 0;
+                padding-right: 10px;
+                cursor: pointer;
+                img{
+                    margin-top: -3px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .on{
+            background-color: #edf6ff;
+            border-color: #0088ff;
+        }
+        .special{
+            height: auto;
+            padding: 0;
+            border: none;
+            
+        }
+        .error{
+            border: 1px solid red;
+        }
+    }
+}
+.wxCode{
+    dt{
+        font: 24px/46px "微软雅黑";
+        color: #ff3030;
+        text-align: center; 
+    }
+    dd{ 
+        text-align: center;
+        position: relative;
+        margin-bottom: 20px;
+        
+        .gq{
+            width: 282px;
+            height: 277px;
+            line-height: 277px;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+        }
+        p{
+            cursor: pointer;
+            img{
+                height: 20px;
+                width: 22px;
+            }
+        }
+        .refresh{
+            display: none;
+        }
+    }
+}
+.on{
+    dd{
+        p{
+            display: none;
+        }
+        .gq{
+            display: block;
+        }
+        .refresh{
+            display: block;
+        }
+        span{
+            display: none;
+        }
+    }
+}
+.notice{   
+    font-size: 12px;
+    line-height: 30px;
+    color: #666;
+    span,em,i{
+        margin: 0 4px;
+    }
+}
+.success{
+    width: 282px;
+    height: 277px;
+    line-height: 277px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
 }

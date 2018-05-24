@@ -1,8 +1,6 @@
 @charset "UTF-8";
 html, body {
-  background-color: #f2f2f2;
-  font-family: '微软雅黑';
-}
+  background-color: #f2f2f2; }
 
 .text_orange {
   color: #FFB800 !important; }
@@ -193,4 +191,102 @@ iframe {
 span, em, i {
   font-weight: normal;
   font-style: normal; }
-  /* .layui-body{overflow-y: scroll;} */
+
+.recharge .rechargeType li {
+  border: 1px solid #ccc;
+  padding-left: 26px;
+  margin: 20px 0;
+  border-radius: 4px;
+  height: 52px;
+  position: relative; }
+  .recharge .rechargeType li .rechargeBox {
+    margin-top: 6px; }
+  .recharge .rechargeType li a {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 28px;
+    margin: 6px 10px 0 0;
+    padding-right: 10px;
+    cursor: pointer; }
+    .recharge .rechargeType li a img {
+      margin-top: -3px;
+      margin-right: 10px; }
+
+.recharge .rechargeType .on {
+  background-color: #edf6ff;
+  border-color: #0088ff; }
+
+.recharge .rechargeType .special {
+  height: auto;
+  padding: 0;
+  border: none; }
+
+.recharge .rechargeType .error {
+  border: 1px solid red; }
+
+.wxCode dt {
+  font: 24px/46px "微软雅黑";
+  color: #ff3030;
+  text-align: center; }
+
+.wxCode dd {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px; }
+  .wxCode dd .gq {
+    width: 282px;
+    height: 277px;
+    line-height: 277px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    display: none; }
+  .wxCode dd p {
+    cursor: pointer; }
+    .wxCode dd p img {
+      height: 20px;
+      width: 22px; }
+  .wxCode dd .refresh {
+    display: none; }
+
+.on dd p {
+  display: none; }
+
+.on dd .gq {
+  display: block; }
+
+.on dd .refresh {
+  display: block; }
+
+.on dd span {
+  display: none; }
+
+.notice {
+  font-size: 12px;
+  line-height: 30px;
+  color: #666; }
+  .notice span, .notice em, .notice i {
+    margin: 0 4px; }
+
+.success {
+  width: 282px;
+  height: 277px;
+  line-height: 277px;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  display: none; }

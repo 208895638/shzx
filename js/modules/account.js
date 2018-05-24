@@ -11,7 +11,6 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
     }
     $.post(url, data, function (msg) {
         var msgs = msg.data;
-        console.log(msg);
         if (msg.Code == 1) {
 
             $(".MID em").html(msgs.MID);
@@ -45,7 +44,6 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
     });
     $(".updatePassword").on("click", function () {
         var screenW = $(window).width();
-        console.log(screen);
         if (screenW > 1000) {
             screenW = 480;
         } else {
