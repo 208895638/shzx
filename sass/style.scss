@@ -131,7 +131,9 @@ html,body{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
+.hide{
+    display: none;
+}
 .over2 {
     overflow: hidden;
     display: -webkit-box;
@@ -341,4 +343,27 @@ span,em,i{
     font-size: 16px;
     font-weight: bold;
     display: none;
+}
+.payState{
+    height: 369px;
+    dt{
+        position: relative;
+        padding-top: 137px;
+        img{
+            height: 48px;
+            margin:0 auto;
+            display: block;
+        }
+    }
+    dd{
+        display: block;
+        color: #00bc00;
+        line-height: 26px;
+        margin-top: 5px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+.widthdrawls{
+    background: #f2f2f2;
 }

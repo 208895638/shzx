@@ -5,17 +5,11 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
     table = layui.table,
     $ = layui.$;
     // loading
-    var loading , checkRadio, url = "../api/mapi.aspx",rax ,minRax ,fl = 0 ,val,radioVal ="1" ,inputVal; // 把选择微信支付或支付宝支付的值赋值给checkRadio 费率  最低费率 显示在页面的费率 传给后台的值 单选框的值
+    var loading , checkRadio, url = "../api/mapi.aspx",rax ,minRax ,fl = 0 ,val,radioVal ="2" ,inputVal; // 把选择微信支付或支付宝支付的值赋值给checkRadio 费率  最低费率 显示在页面的费率 传给后台的值 单选框的值
     var postmoney , postorderno , postqrurl ,posturl;//向弹出层传参
-    $(document).on('ajaxStart',function(){ //使用bind 
-        loading = layer.load(3, {time: 10*1000})
-     }).on('ajaxStop',function(){ //直接使用ajaxComplete
-        layer.close(loading); 
-     });
     //  单选框操作
      form.on('radio(cz)', function(data){
         $(this).parents("li").addClass("on").siblings().removeClass("on");
-        console.log($(this).val());
         radioVal = $(this).val().toString();
       }); 
     //    检测输入的金额是否正确
@@ -48,13 +42,11 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
         
         if(!reg.test($(".special input").val())){
         }else{
-            if(val<0){
+            if(val<1){
                 layer.msg("输入的金额最少1元")
             }else{
                 
-                getPayUrl(1 , 1);
-                
-                
+                getPayUrl(1 , radioVal);
             }
             
         }
@@ -74,9 +66,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
             money:money,
             paytype:type
         }
-        console.log(data1)
         $.post(url , data1 ,function (msg) {
-            console.log(msg);
             if(msg.code == 1){
                 postmoney = msg.money;
                 postorderno= msg.orderno; 
@@ -90,6 +80,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
                 };
                 if(type == 2){
                     layer.open({
+                        id:"1",
                         type: 2,
                         title: '微信支付',
                         shadeClose: true,
@@ -99,6 +90,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
                     });
                 }else{
                     layer.open({
+                        id:"1",
                         type: 2,
                         title: '支付宝支付',
                         shadeClose: true,
@@ -110,4 +102,10 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
             }
         })
     }
+    // loading
+    $(document).on('ajaxStart',function(){ //使用bind 
+        loading = layer.load(3, {time: 10*1000})
+     }).on('ajaxStop',function(){ //直接使用ajaxComplete
+        layer.close(loading); 
+     });
 });   

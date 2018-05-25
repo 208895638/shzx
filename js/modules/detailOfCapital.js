@@ -21,13 +21,19 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
      }).on('ajaxStop',function(){ //直接使用ajaxComplete
         layer.close(loading); 
      });
-      
+     var myDate = new Date();
+     //获取当前年
+     var year=myDate.getFullYear();
+     //获取当前月
+     var month=myDate.getMonth()+1;
+     //获取当前日
+     var date=myDate.getDate();
     //   时间
       laydate.render({
         elem: '#dataTime'
         ,range: '到'
         ,format: 'yyyy年M月d日',
-        value: '2018年5月23日 到 2018年5月23日'
+        value: year+'年'+month+'月'+date+'日 到 '+year+'年'+month+'月'+date+'日'
         ,isInitValue: true,
         done:function(value, date, endDate){
           beginTime = date.year+" - "+date.month+" - "+date.date;
@@ -38,7 +44,7 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
       laydate.render({
         elem: ".begincxsj"
         ,format: 'yyyy年M月d日',
-        value: '2018年5月23日'
+        value: year+'年'+month+'月'+date
         ,isInitValue: true,
         done:function(value, date, endDate){
           beginTime = date.year+" - "+date.month+" - "+date.date;
@@ -47,7 +53,7 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
       laydate.render({
         elem: ".endcxsj"
         ,format: 'yyyy年M月d日',
-        value: '2018年5月23日'
+        value: year+'年'+month+'月'+date
         ,isInitValue: true,
         done:function(value, date, endDate){
           endTime = date.year+" - "+date.month+" - "+date.date;
