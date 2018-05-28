@@ -19,6 +19,7 @@ layui.define(['layer', 'form', "jquery","table","element"], function (exports) {
         $(this).addClass("layui-this");
         var urls = $(this).attr("href").split("#")[1];
         $("#iframeBox").attr({"src":urls});
+        $("body").removeClass("site-mobile");
     });
     exports('index', function () {
         return ;
@@ -39,4 +40,10 @@ layui.define(['layer', 'form', "jquery","table","element"], function (exports) {
             $("#iframeBox").attr({"src":"account.html"});
         }
     }
+    $(".sideBtn").on("click",function(){
+        $("body").addClass("site-mobile");
+    });
+    $(".site-mobile-shade").on("click",function(){
+        $("body").removeClass("site-mobile");
+    });
 });   

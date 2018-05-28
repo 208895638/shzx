@@ -13,6 +13,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
     orderno=getPar("orderno");
     qrurl = getPar("qrurl");
     money = parseFloat(getPar("money")).toFixed(2);
+    console.log(qrurl,money);
     type = getPar("type");
     // 区分充值类型是支付宝还是微信
     if(type == 1){

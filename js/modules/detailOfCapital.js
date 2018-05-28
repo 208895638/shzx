@@ -44,7 +44,7 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
       laydate.render({
         elem: ".begincxsj"
         ,format: 'yyyy年M月d日',
-        value: year+'年'+month+'月'+date
+        value: myDate
         ,isInitValue: true,
         done:function(value, date, endDate){
           beginTime = date.year+" - "+date.month+" - "+date.date;
@@ -53,7 +53,7 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
       laydate.render({
         elem: ".endcxsj"
         ,format: 'yyyy年M月d日',
-        value: year+'年'+month+'月'+date
+        value: myDate
         ,isInitValue: true,
         done:function(value, date, endDate){
           endTime = date.year+" - "+date.month+" - "+date.date;
@@ -86,6 +86,7 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
     $(".searchBtn").on("click",function(){
       renderTable(0);
     });
+    noResult();
     var result,count , currentPage, pageMount ,currentpage;  //参数意思是 获取的总数据 table的总数据的个数  当前页 一页展示多少条数据 点击分页时传入的值
     // 渲染数据及分页
     function renderTable(pindex , currentpage){
@@ -98,6 +99,7 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
         pindex:pindex
       };
       $.post(url , searchData ,function(res){
+        console.log(res);
         if(res.Code == 1){
           $(".detailOfCapital").show();
           result = res.Data,count = res.RecordCount , currentPage = res.CurIndex , pageMount = res.PageSize;  //定义表格数据   数据总数  当前页   每一页显示的数据

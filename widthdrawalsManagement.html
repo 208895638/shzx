@@ -40,15 +40,28 @@
                                                         <label class="layui-form-label l">结束时间</label>
                                                         <input type="text" class="layui-input l endcxsj" style="width: auto;" id="dataTimeEnd">
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="layui-inline">
-                                                    <button class="layui-btn l margin_10 searchBtn"><i class="layui-icon">&#xe615;</i>查询</button>
+                                                    <label class="layui-form-label ">查询类型</label>
+                                                    <div class="layui-input-block">
+                                                        <select name="" lay-filter="typeOfGetCash">
+                                                            <option value="5">全部</option>
+                                                            <option value="1">提现成功</option>
+                                                            <option value="0">提现中</option>
+                                                            <option value="-1">提现拒绝</option>
+                                                        </select> 
+                                                    </div>
+                                                       
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <div class="layui-input-block">
+                                                        <button class="layui-btn l margin_10 searchBtn"><i class="layui-icon">&#xe615;</i>查询</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="r">
-                                                <div class="layui-inline">
-                                                    <button class="layui-btn l margin_10 layui-btn-primary widthdraw"><i class="layui-icon layui-icon-rmb"></i>提现</button>
-                                                </div>
+                                            <div class="layui-inline r">
+                                                <button class="layui-btn l margin_10 layui-btn-primary widthdraw"><i class="layui-icon layui-icon-rmb"></i>提现</button>
                                             </div>
                                         </div>
                                         
@@ -58,12 +71,18 @@
                                         <div class="">
                                             <table class="layui-hide" id="test" lay-filter="test"></table>
                                             <script type="text/html" id="state">
-                                                {{#  if(d.state == "提现退回"){ }}
-                                                    <span style="color: #009688;" lay-event="tip1">{{ d.state }}<i class="layui-icon layui-icon-about"  style="margin:0px 4px;margin-top:2px;"></i></span>
-                                                {{#  } else { }}
-                                                <span style="color: #FF5722;">{{ d.state }}</span>
-                                                {{#  } }}
+                                                
+                                                {{#  if (d.Stauts == "0") { }}
+                                                    <span style="color: orange;" lay-event="tip1">{{ "提现中" }}<i class="layui-icon layui-icon-about"  style="margin:0px 4px;margin-top:2px;"></i></span>
+                                                {{#  } else if(d.Stauts == "1"){ }}
+                                                    <span style="color: #009688;" lay-event="tip1">{{ "提现成功" }}<i class="layui-icon layui-icon-ok"  style="margin:0px 4px;margin-top:2px;"></i></span>
+                                                {{#  } else{ }}
+                                                    <span style="color: red;" lay-event="tip1">{{ "提现拒绝" }}<i class="layui-icon layui-icon-help"  style="margin:0px 4px;margin-top:2px;"></i></span>
+                                                {{# } }}
                                                 </script>
+                                        </div>
+                                        <div class="page" id="page">
+
                                         </div>
                                     </div>
                                 </div>

@@ -15,7 +15,7 @@
         <div class="layui-tab layui-tab-brief subordinateManagement" lay-filter="demoTitle">
             <div class="site-demo-title layui-tab-title top0" lay-filter="demoTitle" style="border-bottom: none;background: #fff;padding: 16px 0;">
                     <fieldset class="layui-elem-field layui-field-title">
-                        <legend><a href="subordinateManagement.html">下级列表</a>-下级管理列表</legend>
+                        <legend><a href="subordinateManagement.html">商户列表</a>-下级管理列表</legend>
                     </fieldset>
                     
                 </div>
@@ -23,32 +23,22 @@
                 <div class="layui-tab-item layui-show">
                     <div class="row clearfix">
                         <div class="layui-col-md10 layui-col-md-offset1">
-                            <div class="layui-row">
-                                <input type="text" name="identity" lay-verify="identity" placeholder="请输入姓名查询" autocomplete="off" class="layui-input l subordinateManagement_input">
-                                <button class="layui-btn l margin_10"><i class="layui-icon">&#xe615;</i>查询</button>
-                            </div>
                             <div class="subordinateManagement">
                                 <table class="layui-hide" id="test" lay-filter="test"></table>
                                 <!-- 费率编辑 -->
                                 <script type="text/html" id="operate">
-                                    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑费率</a>
+                                    <a class="layui-btn layui-btn-xs" lay-event="edit">修改基础手续费</a>
                                 </script>
-                                <!-- 支付宝权限 -->
-                                <script type="text/html" id="ZFBPermission">
-                                    <input type="checkbox" name="ZFBPermission" value="{{d.id}}" lay-skin="switch" lay-text="有|无" lay-filter="ZFBPermission" {{ d.ZFBPermission  ? 'checked' : '' }}>
-                                </script>
-                                <!-- 微信权限 -->
-                                <script type="text/html" id="WXPermission">
-                                    <input type="checkbox" name="WXPermission" value="{{d.id}}" lay-skin="switch" lay-text="有|无" lay-filter="WXPermission" {{ d.WXPermission ? 'checked' : '' }}>
-                                </script>
-                                <!-- 一码通权限 -->
-                                <script type="text/html" id="YKTPermission">
-                                    <input type="checkbox" name="YKTPermission" value="{{d.id}}" lay-skin="switch" lay-text="有|无" lay-filter="YKTPermission" {{ d.YKTPermission ? 'checked' : '' }}>
-                                </script>
-                                <!-- 状态 -->
                                 <script type="text/html" id="state">
-                                    <input type="checkbox" name="state" value="{{d.id}}" lay-skin="switch" lay-text="可用|禁用" lay-filter="state" {{ d.id == 10002 ? 'checked' : '' }}>
+                                    {{# if(d.Status == "1") { }}
+                                        <span>开通</span>
+                                    {{# }else{  }}
+                                        <span>禁用</span>
+                                    {{# } }}
                                 </script>
+                            </div>
+                            <div id="page">
+
                             </div>
                         </div>
                     </div>

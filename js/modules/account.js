@@ -4,12 +4,13 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
     , form = layui.form,
     table = layui.table,
     $ = layui.$;
-    var clientH = $(window).height();
+    var clientH = $(window).height() ,RaxMin , SHRaxMin;
     var url = "../api/mapi.aspx";
     var data = {
         m: "getmerchantinfo"
     }
     $.post(url, data, function (msg) {
+        console.log(msg);
         var msgs = msg.data;
         if (msg.Code == 1) {
 
@@ -37,7 +38,10 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
             }
             $(".APIKey em").html(msgs.APIKey);
             $(".NotifyURL em").html(msgs.NotifyURL);
+            RaxMin = msgs.RaxMin;
+            SHRaxMin = msgs.SHRaxMin;
             $(".Rax em").html(msgs.Rax + "(最低手续费:" + msgs.RaxMin + "元)");
+            $(".sh em").html(msgs.SHRax + "(最低手续费:" + msgs.SHRaxMin + "元)");
         } else {
             layer.msg(msg.Msg)
         }
@@ -80,6 +84,25 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
                     layer.msg(msg.Msg);
                 }
             })
+        });
+    });
+    $(".sh").on("click", function () {
+        var screenW = $(window).width();
+        if (screenW > 1000) {
+            screenW = 480;
+        } else {
+            screenW = 320;
+        };
+        layer.open({
+            id: "1",
+            type: 2,
+            title: '修改散户费率',
+            shadeClose: true,
+            shade: false,
+            scrollbar: false,
+            maxmin: false, //开启最大化最小化按钮
+            area: [screenW + "px", '200px'],
+            content: 'shfl.html?RaxMin='+RaxMin+'&SHRaxMin='+SHRaxMin
         });
     });
     exports('index', function () {
