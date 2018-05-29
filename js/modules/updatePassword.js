@@ -50,7 +50,17 @@ layui.define(['layer',"form", "jquery"], function (exports) {
         console.log(checkOldPassword() , checkNewPassword() , checkCofirmPassword());
         if(checkOldPassword() && checkNewPassword() && checkCofirmPassword()){
             $.post(url , data ,function(msg){
-                layer.msg(msg.Msg);
+                if(msg.Code == 1){
+                    layer.msg(msg.Msg);
+                }else{
+                    layer.msg(msg.Msg);
+                }
+                if(msg.Code == "-3"){
+                    layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          } 
+                };
             })
         }
         

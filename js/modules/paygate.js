@@ -14,7 +14,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
       }); 
     //    检测输入的金额是否正确
     var reg = /(^[1-9]([0-9]+)?(\.[0-9]{1,6})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/;
-    $(".special input").blur(function(){
+    $("#inputmoney").blur(function () {
         if(!reg.test($(this).val())){
             $(".special button").addClass("layui-btn-disabled");
             $(this).addClass("error");
@@ -24,7 +24,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
             $(this).removeClass("error");
         }
     });
-    $(".special input").bind('input propertychange', function() {
+    $("#inputmoney").bind('input propertychange', function () {
         $(".special button").removeClass("layui-btn-disabled");
         inputVal = $(this).val();
         if(inputVal == ""){
@@ -36,7 +36,7 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
         }else{
             fl = inputVal*parseFloat(rax);
         }
-         val = (parseFloat(inputVal)+ parseFloat(fl)).toFixed(2);
+         val = (parseFloat(inputVal) - parseFloat(fl)).toFixed(2);
         $(".notice em").html(val);
     });
     $(".special .czBtn").on("click",function(){
@@ -53,17 +53,18 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
         }
     });
     // 获取费率
-    $.post(url,{m:"getrax"},function(msg){
+    $.post(url,{m:"getpaygaterax"},function(msg){
         if(msg.Code == 1){
             rax = msg.Rax*0.01;
             minRax = msg.RaxMin;
             $(".notice i ").html(minRax);
             $(".notice span").html(rax*100+"%");
         }
+      
     });
     function getPayUrl(money , type){
         var data1 = {
-            m:"getpayqrcode",
+            m:"getpayqrcodegetway",
             money:money,
             paytype:type
         }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./layui/css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>添加商品目录</title>
+</head>
+
+<body class="min_font_size">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-tab layui-tab-brief subordinateManagement" lay-filter="demoTitle">
+            <div class="layui-body layui-tab-content site-demo site-demo-body bg_fff layui-form top72">
+                <div class="layui-tab-item layui-show">
+                    <div class="row clearfix">
+                        <div class="layui-col-md10 layui-col-md-offset1">
+                            <div class="goodsManagement">
+                                <div class="clearfix layui-form">
+                                    <div class="clearfix">
+                                        <label class="layui-form-label width100">商品目录名称</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" class="layui-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <label class="layui-form-label width100">是否允许显示</label>
+                                        <div class="layui-input-inline">
+                                            <input type="radio" name="sex" value="男" title="显示" checked>
+                                            <input type="radio" name="sex" value="女" title="不显示" >
+                                        </div>
+                                    </div>
+                                    <div class="layui-input-block" style="padding-left: 20px">
+                                        <button class="layui-btn">保存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="./layui/layui.js"></script>
+<script>
+    layui.config({
+        base: './js/modules/'
+    }).use('addCatalog'); //加载入口
+</script>
+
+</html>

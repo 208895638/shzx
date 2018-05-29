@@ -60,6 +60,12 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
             $(".notice i ").html(minRax);
             $(".notice span").html(rax*100+"%");
         }
+        if(msg.Code == "-3"){
+            layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          }
+        };
     });
     function getPayUrl(money , type){
         var data1 = {

@@ -12,11 +12,16 @@ layui.define(['layer',"form", "jquery"], function (exports) {
         m:"getchildmrax",
         mid:mid
     },function(msg){
-        console.log(msg);
         if(msg.Code == 1){
             $(".jcfl").val(msg.Rax);
             $(".zdfy").val(msg.RaxMin)
         }
+        if(msg.Code == "-3"){
+            layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          }
+        };
     });
     $(".updatePassword").on("click",function(){
         var data = {
@@ -34,7 +39,6 @@ layui.define(['layer',"form", "jquery"], function (exports) {
             }
         })
     })
-    console.log(mid)
     function getParams(url) {
         var theRequest = new Object();
         if (!url)

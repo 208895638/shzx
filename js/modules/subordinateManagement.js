@@ -29,7 +29,6 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
             pindex:pindex
         }
         $.post(url , postData ,function (msg){
-            console.log(msg);
           if(msg.Code == 1){
             result = msg.Data,count = msg.RecordCount , currentPage = msg.CurIndex , pageMount = msg.PageSize;  //定义表格数据   数据总数  当前页   每一页显示的数据
             table.render({
@@ -67,6 +66,12 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
             layer.msg(msg.Msg);
             // noResult();
           }
+          if(msg.Code == "-3"){
+            layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          }
+        };
         })
         
       }
@@ -90,7 +95,6 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
         table.on('tool(test)', function(obj){
             var data = obj.data;
             var pid = data.PID;
-            console.log(data)
             if(obj.event == 'edit'){
                 var screenW = $(window).width();
             if (screenW > 1000) {

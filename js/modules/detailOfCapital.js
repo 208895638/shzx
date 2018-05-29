@@ -66,8 +66,9 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
     };
     // 下拉框
     $.post(url , data ,function(msg){
-       searchType = msg.Data[0].PID;
+       
       if(msg.Code == 1){
+        searchType = msg.Data[0].PID;
         var res = msg.Data,str = "";
         $.each(res , function(index , item){
           str+="<option value='"+item.PID +"'>"+item.BName +"</option>"
@@ -76,6 +77,12 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
         form.render();
         str = "";
       }
+      if(msg.Code == "-3"){
+          layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          }
+      };
     }) ;
     // 获取下拉框的选中
     form.on('select(searchType)', function(data){

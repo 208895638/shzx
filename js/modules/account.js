@@ -29,6 +29,7 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
             }
             $(".AliName em").html(msgs.AliName);
             $(".AliAccount em").html(msgs.AliAccount);
+            $("#shdz").html(msgs.SHURL);
             if (msgs.Status == "1") {
                 $(".state .state1").show();
                 $(".state .state2").hide();
@@ -45,6 +46,12 @@ layui.define(['layer', 'form', "jquery", "table"], function (exports) {
         } else {
             layer.msg(msg.Msg)
         }
+        if(msg.Code == "-3"){
+            layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          } 
+        };
     });
     $(".updatePassword").on("click", function () {
         var screenW = $(window).width();

@@ -22,6 +22,12 @@ layui.define(['layer', 'form', "jquery"], function (exports) {
         }else{
             
         }
+        if(msg.Code == "-3"){
+            layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          } 
+        };
     });
     var reg = /(^[1-9]([0-9]+)?(\.[0-9]{1,6})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/;
     $(".money input").on("input propertychange" ,function(){

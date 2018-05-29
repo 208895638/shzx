@@ -20,6 +20,12 @@ layui.define(['layer',"form", "jquery"], function (exports) {
             }else{
                 layer.msg(msg.Msg);
             }
+            if(msg.Code == "-3"){
+                layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          }
+            };
         })
     });
     

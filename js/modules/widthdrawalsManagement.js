@@ -96,6 +96,12 @@ layui.define(['layer', 'form', "jquery","table","laydate","laypage"], function (
           layer.msg(msg.Msg);
           noResult();
         }
+        if(msg.Code == "-3"){
+          layer.msg("登录状态已失效,3秒后跳转到登录页面!")
+          if (window != top) {
+            setTimeout(function(){top.location.href = "login.html"; },3000);
+          }
+      };
       })
       
     }

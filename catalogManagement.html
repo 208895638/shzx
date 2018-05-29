@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./layui/css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>商户列表</title>
+</head>
+
+<body class="min_font_size">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-tab layui-tab-brief subordinateManagement" lay-filter="demoTitle">
+            <div class="site-demo-title layui-tab-title top0" lay-filter="demoTitle" style="border-bottom: none;background: #fff;padding: 16px 0;">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>
+                        <a href="subordinateManagement.html">目录管理</a>-商品管理</legend>
+                </fieldset>
+
+            </div>
+            <div class="layui-body layui-tab-content site-demo site-demo-body bg_fff layui-form top72">
+                <div class="layui-tab-item layui-show">
+                    <div class="row clearfix">
+                        <div class="layui-col-md10 layui-col-md-offset1">
+                            <div class="catalogManagement">
+                                <ul class="layui-form">
+                                    <li class="layui-card">
+                                        <div class="layui-collapse userTemplate">
+                                            <div class="layui-colla-item">
+                                                <h2 class="layui-colla-title">自定义模板名称</h2>
+                                                <div class="layui-colla-content layui-show">
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">模板名称</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <span class="layui-inline">如:QQ号充值模板</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">充值账户名称</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <span class="layui-inline">充值账号的叫法,比如充Q币时叫QQ号码,充传奇时叫玩家客户名</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-colla-item">
+                                                <h2 class="layui-colla-title">自定义名称
+                                                    <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
+                                                </h2>
+                                                <div class="layui-colla-content layui-show">
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">自定义名称</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <span class="layui-inline">如:QQ号、游戏帐号</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">输入框提示</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <div class="layui-input-inline" style="height: 38px;">
+                                                            <input type="radio" name="gs" value="1" title="所有格式" checked="">
+                                                            <input type="radio" name="gs" value="1" title="数字">
+                                                        </div>
+                                                        <div class="layui-input-inline">
+                                                            <label class="layui-form-label width">最长字符</label>
+                                                            <div class="layui-input-inline">
+                                                                <input type="text" name="" class="layui-input" value="1" title="数字" maxlength="3" style="width: 50px;">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="layui-colla-item">
+                                                <h2 class="layui-colla-title">单选名称
+                                                    <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
+                                                </h2>
+                                                <div class="layui-colla-content layui-show">
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">单选名称</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">单选内容</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <span class="layui-inline">请用半角号逗号隔开,如内容1,内容2,内容3</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-colla-item">
+                                                <h2 class="layui-colla-title">密码框名称
+                                                    <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
+                                                </h2>
+                                                <div class="clearfix layui-colla-content layui-show">
+                                                    <label class="layui-form-label width100">密码框名称</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                    </div>
+                                                </div>
+                                            </div>  -->
+                                            <div class="layui-colla-item">
+                                                <h2 class="layui-colla-title">下拉框名称
+                                                    <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
+                                                </h2>
+                                                <div class="layui-colla-content layui-show">
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">下拉框名称</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <span class="layui-inline">如:QQ号、游戏帐号</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <label class="layui-form-label width100">下拉内容</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
+                                                        </div>
+                                                        <span class="layui-inline">请用半角号逗号隔开,如内容1,内容2,内容3</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="addContant" style="padding: 10px 15px;">
+                                            <label class="layui-form-label width100">添加字段类型</label>
+                                            <div class="layui-btn-group" id="addGroup">
+                                                <button class="layui-btn layui-btn-primary" id="addWB"> <i class="layui-icon">&#xe654;</i>文本框</button>
+                                                <button class="layui-btn layui-btn-primary" id="addXL"> <i class="layui-icon">&#xe654;</i>下拉框</button>
+                                            </div>
+                                        </div>
+                                        <div class="postData" style="padding: 10px 15px;">
+                                                <label class="layui-form-label width100">&nbsp;</label>
+                                            <div class="layui-inline">
+                                                <button class="layui-btn">保存</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="./layui/layui.js"></script>
+<script>
+    layui.config({
+        base: './js/modules/'
+    }).use('catalogManagement'); //加载入口
+</script>
+
+</html>
