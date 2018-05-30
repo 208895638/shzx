@@ -27,7 +27,10 @@
                     <div class="row clearfix">
                         <div class="layui-col-md10 layui-col-md-offset1">
                             <div class="catalogManagement">
-                                <ul class="layui-form">
+                                <div class="clearfix" style="margin: 10px 0;">
+                                    <button class="layui-btn r addTemplate"> <i class=" layui-icon layui-icon-add-circle"></i>添加</button>
+                                </div> 
+                                <!-- <ul class="layui-form">
                                     <li class="layui-card">
                                         <div class="layui-collapse userTemplate">
                                             <div class="layui-colla-item">
@@ -80,38 +83,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="layui-colla-item">
-                                                <h2 class="layui-colla-title">单选名称
-                                                    <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
-                                                </h2>
-                                                <div class="layui-colla-content layui-show">
-                                                    <div class="clearfix">
-                                                        <label class="layui-form-label width100">单选名称</label>
-                                                        <div class="layui-input-inline">
-                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <label class="layui-form-label width100">单选内容</label>
-                                                        <div class="layui-input-inline">
-                                                            <input type="text" lay-verify="required|phone" class="layui-input" value="">
-                                                        </div>
-                                                        <span class="layui-inline">请用半角号逗号隔开,如内容1,内容2,内容3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="layui-colla-item">
-                                                <h2 class="layui-colla-title">密码框名称
-                                                    <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
-                                                </h2>
-                                                <div class="clearfix layui-colla-content layui-show">
-                                                    <label class="layui-form-label width100">密码框名称</label>
-                                                    <div class="layui-input-inline">
-                                                        <input type="text" lay-verify="required|phone" class="layui-input" value="">
-                                                    </div>
-                                                </div>
-                                            </div>  -->
                                             <div class="layui-colla-item">
                                                 <h2 class="layui-colla-title">下拉框名称
                                                     <span class="r layui-icon layui-icon-close deleteThis" title="删除这一行"></span>
@@ -148,7 +119,24 @@
                                             </div>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> -->
+                                <div class="catalogManagement">
+                                    <table class="layui-hide" id="test" lay-filter="test"></table>
+                                    <!-- 费率编辑 -->
+                                    <script type="text/html" id="operate">
+                                        <a class="layui-btn layui-btn-xs" lay-event="edit">修改基础手续费</a>
+                                    </script>
+                                    <script type="text/html" id="state">
+                                        {{# if(d.Status == "1") { }}
+                                            <span>开通</span>
+                                        {{# }else{  }}
+                                            <span>禁用</span>
+                                        {{# } }}
+                                    </script>
+                                </div>
+                                <div id="page">
+    
+                                </div>
                             </div>
                         </div>
                     </div>
